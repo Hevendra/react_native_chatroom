@@ -1,15 +1,18 @@
-import React,{Component} from 'react';
-import {View,Text} from 'react-native';
-import {Header} from './components/common';
-import LoginForm from './components/LoginForm'
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
 
 
-export default class App extends Component{
-
-    initializeFirebase() {
-        const firebase = require("firebase");
-       // Initialize Firebase
-        var config = {
+export default class App extends Component {
+   componentWillMount() {
+    this.initializeFirebase();
+   }
+       
+       initializeFirebase() {
+        const firebase = require('firebase');
+       
+        const config = {
             apiKey: 'AIzaSyDq1HGwm7iGnfLK3u4XymygS6RmFVt1frg',
             authDomain: 'auth-11911.firebaseapp.com',
             databaseURL: 'https://auth-11911.firebaseio.com',
@@ -20,19 +23,11 @@ export default class App extends Component{
           firebase.initializeApp(config);
        }
 
-       componentWillMount()
-       {
-           this.initializeFirebase();
-       }
-
-    render(){
-        return(
+    render() {
+        return (
             <View>
-            <Header headerText="Auth">
-            </Header>
-            <LoginForm/>
-                
-               
+            <Header headerText="Auth" />
+            <LoginForm />
             </View>
         );
     }
