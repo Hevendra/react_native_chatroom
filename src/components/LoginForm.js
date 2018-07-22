@@ -19,6 +19,7 @@ export default class LoginForm extends Component {
           <TextInput
             underlineColorAndroid="rgba(0,0,0,0)"
             placeholder="Email"
+            style={{height: 20, width: 100}}
             placeholderTextColor="#000000"
           />
         </CardSection>
